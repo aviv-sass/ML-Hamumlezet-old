@@ -1,0 +1,20 @@
+Name:
+Un2
+ID:
+123456789
+Catalog Type:
+2020-2021
+Degree Type:
+3 years - Computer Science
+Courses ID List:
+234129
+104166
+104031
+324033
+000031
+234114
+104032
+094412
+234141
+114071
+234292

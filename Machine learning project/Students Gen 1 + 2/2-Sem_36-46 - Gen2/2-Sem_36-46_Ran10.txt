@@ -1,0 +1,21 @@
+Name:
+Ran10
+ID:
+123456789
+Catalog Type:
+2020-2021
+Degree Type:
+3 years - Computer Science
+Courses ID List:
+234129
+236336
+234114
+134058
+094222
+104166
+236278
+096411
+104031
+104134
+000031
+236790
