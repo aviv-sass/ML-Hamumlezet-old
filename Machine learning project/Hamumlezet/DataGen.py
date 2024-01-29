@@ -1,43 +1,82 @@
 import os
 from Main import main
 from DataSet import DataSet
+import json
+import time
 
-REMAINING_POINTS = []
+if __name__ == '__main__':
+    #measure time begin
+    start = time.time()
+    file_path = 'C:/Users/avivs/Desktop/Intreviews/ML-Hamumlezet/Machine Learning Project/MLstudentsFromScratch'
+    folders = os.listdir(file_path)
 
-DataSet()
+    #completed 1 semester:
+    # for folder in folders:
+    #     students = os.listdir(f'{file_path}/{folder}')
+    #     if folder == 'Students - Completed 1':
+    #         for stu in students:
+    #             print(f'Running: {stu}')
+    #             try:
+    #                 new, original = main(f'{file_path}/{folder}/{stu}')
+    #             except:
+    #                 continue
+    #             # update the json file and insert semesters to the suggested courses
+    #             with open(f'{file_path}/{folder}/{stu}', 'w') as outfile:
+    #                 json.dump(original, outfile, indent=4)
+    #             # remove until '-'
+    #             new_name = stu.split('-')[0]
+    #             new_name += '-Semester2'
+    #             # create json file from the student_data
+    #             with open(f'{file_path}/Students - Completed 2/{new_name}.json', 'w') as f:
+    #                 # convert to json with indent=4
+    #                 json.dump(new, f, indent=4)
+    #             print(f'Done: {new}')
 
-students = os.listdir('C:/Users/avivs/Desktop/Studies/Machine Learning Project/Students Gen 1 + 2/new students')
-for stu in students:
-    #run the program with the student file
-    #if name is not 'new_student.txt' then continue
-    if stu != 'new_student.txt':
-        continue
-    print(f'Running {stu}')
-    main(f'C:/Users/avivs/Desktop/Studies/Machine Learning Project/Students Gen 1 + 2/new students/{stu}')
-    print(f'Done {stu}')
+    # #completed 2 semester:
+    # for folder in folders:
+    #     students = os.listdir(f'{file_path}/{folder}')
+    #     if folder == 'Students - Completed 2':
+    #         for stu in students:
+    #             print(f'Running {stu}')
+    #             try:
+    #                 new, original = main(f'{file_path}/{folder}/{stu}')
+    #             except:
+    #                 continue
+    #             # update the json file and insert semesters to the suggested courses
+    #             with open(f'{file_path}/{folder}/{stu}', 'w') as outfile:
+    #                 json.dump(original, outfile, indent=4)
+    #             # remove until '-'
+    #             new_name = stu.split('-')[0]
+    #             new_name += '-Semester3'
+    #             # create json file from the student_data
+    #             with open(f'{file_path}/Students - Completed 3/{new_name}.json', 'w') as f:
+    #                 # convert to json with indent=4
+    #                 json.dump(new, f, indent=4)
+    #
+    #             print(f'Done {new_name}')
+    # completed 3 semester:
+    for folder in folders:
+        students = os.listdir(f'{file_path}/{folder}')
+        if folder == 'Students - Completed 3':
+            for stu in students:
+                print(f'Running {stu}')
+                try:
+                    new, original = main(f'{file_path}/{folder}/{stu}')
+                except:
+                    continue
+                # update the json file and insert semesters to the suggested courses
+                with open(f'{file_path}/{folder}/{stu}', 'w') as outfile:
+                    json.dump(original, outfile, indent=4)
+                # remove until '-'
+                new_name = stu.split('-')[0]
+                new_name += '-Semester3'
+                # create json file from the student_data
+                with open(f'{file_path}/Students - Completed 4/{new_name}.json', 'w') as f:
+                    # convert to json with indent=4
+                    json.dump(new, f, indent=4)
 
-print('Done!')
-
-
-#studnts will be a list of all the students.txt files
-# semesters = os.listdir('Students')
-# #remove all the str with sufix 'xlsx'
-# for sem in semesters:
-#     #remove all the str with sufix 'xlsx'
-#     if sem.endswith('xlsx'):
-#         semesters.remove(sem)
-#         continue
-    # students = os.listdir(f'Students/{sem}')
-    #remove all the str with sufix 'xlsx'
-    # for stu in students:
-    #     if stu.endswith('xlsx'):
-    #         students.remove(stu)
-    # for stu in students:
-    #     #run the program with the student file
-    #     print(f'Running {stu}')
-    #     main(f'C:/Users/avivs/Desktop/Studies/AI Project/Students/{sem}/{stu}')
-    #     print(f'Done {stu}')
-# print('Done!')
-
-
-
+                print(f'Done {new_name}')
+    #measure time end
+    end = time.time()
+    print(f'Time: {end - start}')
+    print('Done All!')

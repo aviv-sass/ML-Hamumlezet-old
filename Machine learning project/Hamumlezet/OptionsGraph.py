@@ -599,17 +599,17 @@ class OptionsGraph(Singleton):
         semester_as_list = list(origin_node[0])
         new_state = deepcopy(state)
         new_state.update_completed_courses(semester_as_list)
-        comp = new_state.get_completed_points()
-        if 18 <= comp <= 23:
-                DataSet.get_instance().add_student_dct('18-23', new_state)
-        elif 36 <= comp <= 46:
-                DataSet.get_instance().add_student_dct('36-46', new_state)
-        elif 54 <= comp <= 69:
-                DataSet.get_instance().add_student_dct('54-69', new_state)
-        elif 72 <= comp <= 92:
-                DataSet.get_instance().add_student_dct('72-92', new_state)
-        elif 90 <= comp <= 115:
-                DataSet.get_instance().add_student_dct('90-115', new_state)
+        # comp = new_state.get_completed_points()
+        # if 18 <= comp <= 23:
+        #         DataSet.get_instance().add_student_dct('18-23', new_state)
+        # elif 36 <= comp <= 46:
+        #         DataSet.get_instance().add_student_dct('36-46', new_state)
+        # elif 54 <= comp <= 69:
+        #         DataSet.get_instance().add_student_dct('54-69', new_state)
+        # elif 72 <= comp <= 92:
+        #         DataSet.get_instance().add_student_dct('72-92', new_state)
+        # elif 90 <= comp <= 115:
+        #         DataSet.get_instance().add_student_dct('90-115', new_state)
         #print('remaining: ', new_state.get_remaining_points())
         if new_state.is_graduate():
             return
